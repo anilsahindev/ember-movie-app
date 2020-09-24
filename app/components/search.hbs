@@ -1,0 +1,40 @@
+<div class="p-8">
+  <div class="bg-white flex items-center rounded-full shadow-xl">
+    <input value={{this.value}} {{on "change" this.getValue}}  class="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" 
+    placeholder="Search A Movie">
+    <div class="p-4">
+      <button  {{on "click" this.searchMovie}}
+      class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+        click
+      </button>
+      </div>
+    </div>
+  </div>
+  {{yield}}
+
+
+<div class="flex min-h-screen justify-center align-center flex-wrap bg-gray-50 p-4">
+    {{#each this.movies as |movie|}}
+    <div class="flex mr-8 mb-8 flex-col rounded shadow-xl lg:w-1/5 sm:w-1/2">
+        <div class="flex-shrink-0">
+            <img class="h-10/12 w-full object-cover" src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}" alt="Person hiking in the woods" />
+        </div>
+        <div class="flex-1 bg-white p-6 flex flex-col justify-around">
+            <div class="flex-1">
+                <p class="text-sm leading-5 font-medium text-teal-600"></p>
+                    <h3 class="mt-2 truncate max-w-sm text-xl leading-7 font-semibold text-gray-900">
+                        {{movie.original_title}}
+                    </h3>
+            </div>
+            <div class="flex text-sm justify-between leading-5 text-gray-500">
+                <span class="mr-1">
+                    Relase Date <br> {{ movie.release_date }}
+                </span>
+                <span>
+                    IMDB Score <br> {{movie.vote_average}}
+                </span>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
