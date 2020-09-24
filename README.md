@@ -2,7 +2,8 @@
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
-
+* `Live demo`
+[https://ember-restful.vercel.app/](https://ember-restful.vercel.app/)
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
