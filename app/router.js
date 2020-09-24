@@ -9,4 +9,5 @@ export default class Router extends EmberRouter {
 Router.map(function() {
   this.route('not-found', { path: '/*path' });
   this.route('search');
+  this.route('movie', { path: 'movie/:movie_id'});
 });
